@@ -7,7 +7,13 @@ export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
-    rules: { "@typescript-eslint/no-unused-vars": "error" },
+    rules: {
+      "@typescript-eslint/no-unused-vars": "error",
+      "no-unused-expressions": "error",
+      "prefer-const": "error",
+      "no-console": "warn",
+      "no-undef": "error",
+    },
     extends: ["js/recommended"],
     languageOptions: { globals: globals.browser },
     ignores: ["node_modules/**", "dist/**"],
