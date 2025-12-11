@@ -1,6 +1,7 @@
 import type { Application, Request, Response } from 'express'
 import express from 'express'
 import cors from 'cors'
+import { StudentRoutes } from './app/modules/student/student.route.js'
 
 const app: Application = express()
 
@@ -8,9 +9,14 @@ const app: Application = express()
 app.use(express.json())
 app.use(cors())
 
-app.get('/', (req: Request, res: Response) => {
-  const a = 10
+// application routes
+app.use('/api/v1/students', StudentRoutes)
+
+const getAController = (req: Request, res: Response) => {
+  const a = 14
   res.send(a)
-})
+}
+
+app.get('/', getAController)
 
 export default app

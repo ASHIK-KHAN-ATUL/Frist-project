@@ -1,12 +1,16 @@
 import express from 'express';
 import cors from 'cors';
+import { StudentRoutes } from './app/modules/student/student.route.js';
 const app = express();
 // parsers
 app.use(express.json());
 app.use(cors());
-app.get('/', (req, res) => {
-    const a = 10;
+// application routes
+app.use('/api/v1/students', StudentRoutes);
+const getAController = (req, res) => {
+    const a = 14;
     res.send(a);
-});
+};
+app.get('/', getAController);
 export default app;
 //# sourceMappingURL=app.js.map
