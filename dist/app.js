@@ -8,7 +8,7 @@ app.use(cors());
 // application routes
 app.use('/api/v1/students', StudentRoutes);
 const getAController = (req, res) => {
-    const a = 17;
+    const a = 14;
     res.send(a);
 };
 app.get('/', getAController);
