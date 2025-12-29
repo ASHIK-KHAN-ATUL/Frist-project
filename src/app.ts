@@ -13,7 +13,7 @@ app.use(cors())
 app.use('/api/v1/students', StudentRoutes)
 
 const getAController = (req: Request, res: Response) => {
-  const a = 14
+  const a = 134
   res.send(a)
 }
 
